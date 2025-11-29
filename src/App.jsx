@@ -1,11 +1,11 @@
-import './App.css'
+import PokemonGame from "./PokemonGame.jsx";
 
 function App() {
   return (
     <>
-      <h1>Hello my group!</h1>
+      <PokemonGame />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
