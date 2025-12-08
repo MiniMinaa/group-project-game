@@ -1,8 +1,24 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import PokemonDisplay from "./components/PokemonDisplay";
 import AnswerButtons from "./components/AnswerButtons";
+import {AudioManager} from './utility/audioManager';
 
 function PokemonGame() {
+  useEffect(() => {
+    const handleFirstClick = () => {
+      AudioManager.playBg();
+      window.removeEventListener("click", handleFirstClick);
+    };
+
+    window.addEventListener("click", handleFirstClick);
+    return () => {
+      AudioManager.stopBg();
+      window.removeEventListener("click", handleFirstClick);
+    };
+  }, []);
+
+
   const [gameStarted, setGameStarted] = useState(false); // Track if game has started
   const [pokemon, setPokemon] = useState(null); // Store the current correct Pokemon
   const [options, setOptions] = useState([]); // Store all 4 Pokemon options for buttons
