@@ -10,6 +10,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* added colors */
+  --primary-color: #4e8a40 ;
+  --primary-bg-color: #6eb863;
+}
+
+body {
+  background-color: var(--primary-bg-color);
 }
 
 /* GAME CONTAINER & LAYOUT */
