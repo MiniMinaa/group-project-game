@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PokemonDisplay from "./components/PokemonDisplay";
 import AnswerButtons from "./components/AnswerButtons";
 import Scoreboard from "./components/Scoreboard";
+import {AudioManager} from './utility/audioManager';
 
 function PokemonGame() {
   const [gameStarted, setGameStarted] = useState(false); // Track if game has started
@@ -133,8 +134,10 @@ function PokemonGame() {
       if (guessedPokemon.id === pokemon.id) { // scoreboard, check if guess is correct
         setScore((prev) => prev + 1);   // scoreboard, add 1 to score
         setStreak((prev) => prev + 1);  // scoreboard, continue streak
+        AudioManager.playCorrect();
       } else {
         setStreak(0); // scoreboard, reset streak on wrong guess
+        AudioManager.playWrong();
       }
 
       // Wait 700 micro seconds to show result, then fetch next round

@@ -1,0 +1,61 @@
+.audio_controls {
+  display: flex; 
+  gap: 12; 
+  align-items: center;
+}
+
+.audio_controls_toggle {
+  padding: 6px 10px;
+  background-color: #ec3a0e;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  color: #feffff; 
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.audio_controls_volume-row {
+  margin-left: 4px;  
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+}
+
+.audio_controls_label {
+  font-size: 12px;
+}
+
+.audio_controls_percent {
+  font-size: 12px;
+  min-width: 36px;
+}
+
+.pokeball-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 14px;           
+  background: linear-gradient(90deg, #f7f7f7, #eaeaea);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+  padding: 0;     
+}
+
+.pokeball-range::-webkit-slider-runnable-track {
+  height: 14px;
+  background: linear-gradient(90deg, #ffeded 0%, #ffe8d6 100%);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.pokeball-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -12px;         /* centers the thumb vertically relative to track height */
+  width: 36px;              /* thumb size — choose to match your img */
+  height: 36px;
+  background-image: url('/public/Poké_Ball_icon.svg');
+  background-size: cover;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
