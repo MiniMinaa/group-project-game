@@ -1,4 +1,3 @@
-import React from "react";
 
 function Scoreboard({ score, total, streak }) {
   // Calculate accuracy safely (avoid dividing by zero)

@@ -133,9 +133,9 @@
   font-size: 18px;
 }
 
-/*.scoreboard-wrapper {
+.scoreboard-wrapper {
   display: flex;
   position: fixed;
   right: 40px;
   top: 120px;
-}*/
+}
