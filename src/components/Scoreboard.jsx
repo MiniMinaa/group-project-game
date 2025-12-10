@@ -1,5 +1,5 @@
 
-function Scoreboard({ score, total, streak }) {
+function Scoreboard({ topScore, score, total, streak }) {
   // Calculate accuracy safely (avoid dividing by zero)
   const accuracy =
     total > 0 ? Math.round((score / total) * 100) : 0;
@@ -7,6 +7,9 @@ function Scoreboard({ score, total, streak }) {
   return (
     <div className="scoreboard">
       {/* Show the player's total score */}
+
+      <p><strong>Topscore:</strong> {topScore}</p>
+
       <p><strong>Score:</strong> {score}</p>
 
       {/* How many rounds the player has answered */}

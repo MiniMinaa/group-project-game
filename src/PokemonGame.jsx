@@ -15,6 +15,15 @@ function PokemonGame() {
   const [total, setTotal] = useState(0);  // scoreboard, Total rounds played
   const [streak, setStreak] = useState(0); // scoreboard, Correct streak
 
+  // topscore logic
+  const [topScore, setTopScore] = useState(0);
+
+  useEffect(() => {
+    if (score > topScore) {
+      setTopScore(score);
+    }
+  }, [score, topScore]);
+
   //Timer logic
   useEffect(() => {
     if (!gameStarted || gameOver) return;
@@ -119,7 +128,7 @@ function PokemonGame() {
       {gameStarted && !gameOver && <h2>Time Left: {timeLeft}s</h2>}
 
       <div className="scoreboard-wrapper">
-        <Scoreboard score={score} total={total} streak={streak} />
+        <Scoreboard topScore={topScore} score={score} total={total} streak={streak} />
       </div>
 
       <div className="display-box">
@@ -138,6 +147,7 @@ function PokemonGame() {
         {gameOver && (
           <div className="end-screen">
             <h1>Game Over!</h1>
+            <p>Topscore: {topScore}</p>
             <p>Final Score: {score}</p>
             <p>Rounds Played: {total}</p>
             <p>Longest Streak: {streak}</p>
