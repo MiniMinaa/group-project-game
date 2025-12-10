@@ -125,3 +125,24 @@ body {
   background-color: red;
   color: #fff;
 }
+.scoreboard {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.scoreboard p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.scoreboard-wrapper {
+  display: flex;
+  position: fixed;
+  right: 40px;
+  top: 120px;
+}
