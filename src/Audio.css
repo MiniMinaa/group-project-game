@@ -1,9 +1,10 @@
 .audio_controls {
   display: flex; 
+  max-height: 200px;
   gap: 12; 
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding-top: 30px;
 }
 
 .audio_controls_toggle {
@@ -29,15 +30,15 @@
   gap: 8px;
 }
 
-.audio_controls_label {
+.normal-text {
   font-size: 20px;
-  font-style: bold;
+  font-weight: bold;
   margin-left: 20px;
 }
 
 .audio_controls_percent {
   font-size: 20px;
-  font-style: bold;
+  font-weight: bold;
   min-width: 36px;
 }
 

@@ -90,7 +90,7 @@ export default function AudioControls({ className }) {
 
       {/* Volume slider and percentage */}
       <div className='audio_controls_volume-row'>
-        <label className='audio_controls_label'>Volume</label>
+        <label className='normal-text'>Volume</label>
         <input
           className='pokeball-range'
           type="range"

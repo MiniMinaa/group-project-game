@@ -154,12 +154,12 @@ function PokemonGame() {
         {gameStarted && !gameOver && <h2>Time Left: {timeLeft}s</h2>}
 
         <form>
-          <div>
-            <label htmlFor="difficulty">Difficulty: </label>
-            <select id="difficulty" name="difficulty" value={difficulty} disabled={gameStarted} onChange={(e) => setDifficulty(e.target.value)}>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
+          <div className="select-difficulty">
+            <label htmlFor="difficulty" className="normal-text m-r">Difficulty: </label>
+            <select id="difficulty" name="difficulty" value={difficulty} disabled={gameStarted} onChange={(e) => setDifficulty(e.target.value)} className={`difficulty-dropdown ${difficulty}`}>
+              <option value="easy" className="easy"> Easy</option>
+              <option value="medium" className="medium"> Medium</option>
+              <option value="hard" className="hard"> Hard</option>
             </select>
           </div>
         </form>
@@ -171,7 +171,7 @@ function PokemonGame() {
         <div className="display-box">
           {!gameStarted && !gameOver && (
             // Before game starts: show start button
-            <button className="start-btn" onClick={startGame}>
+            <button className="start-btn normal-text" onClick={startGame}>
               Start Game
             </button>
           )}
@@ -184,12 +184,12 @@ function PokemonGame() {
           {/* End game screen*/}
           {gameOver && (
             <div className="end-screen">
-              <h1>Game Over!</h1>
-              <p>Topscore: {topScore}</p>
-              <p>Final Score: {score}</p>
-              <p>Rounds Played: {total}</p>
-              <p>Longest Streak: {streak}</p>
-              <button className="start-btn" onClick={restartGame}>
+              <h1 className="black">Game Over!</h1>
+              <p className="scoreboard-text top-score">🏆 Topscore: {topScore}</p>
+              <p className="scoreboard-text final-score">Final Score: {score}</p>
+              <p className="scoreboard-text">Rounds Played: {total}</p>
+              <p className="scoreboard-text">Longest Streak: {streak}</p>
+              <button className="start-btn scoreboard-text pulse" onClick={restartGame}>
                 Play Again
               </button>
             </div>
